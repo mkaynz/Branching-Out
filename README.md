@@ -1,6 +1,5 @@
 # Project App Skeleton
 
-
-## Author
+## Authors
 
 -McKenzie Holliday
