@@ -2,4 +2,7 @@
 
 ## Authors
 
--McKenzie Holliday
+- Cayla Taylor
+- McKenzie Holliday
+
+
