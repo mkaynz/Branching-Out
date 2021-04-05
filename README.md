@@ -2,4 +2,5 @@
 
 ##Authors 
 
-- Cayla Taylor
+- Alice
+-Emmanuel Opara
