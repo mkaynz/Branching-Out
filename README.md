@@ -1,5 +1,8 @@
 # Project App Skeleton
 
-##Authors 
+## Authors
 
 - Cayla Taylor
+- McKenzie Holliday
+
+
