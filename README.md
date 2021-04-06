@@ -2,6 +2,7 @@
 
 ## Authors
 
+- Cameron Futrell
 - Cayla Taylor
 - McKenzie Holliday
 
