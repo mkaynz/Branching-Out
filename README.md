@@ -1,4 +1,8 @@
 # Project App Skeleton
 
-##Authors 
--Emmanuel Opara
+## Authors
+
+- Cameron Futrell
+- McKenzie Holliday
+- Emmanuel Opara
+- Cayla Taylor
