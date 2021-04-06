@@ -1,6 +1,9 @@
 # Project App Skeleton
 
-##Authors 
+## Authors
 
 - Cameron Futrell
 - Cayla Taylor
+- McKenzie Holliday
+
+
