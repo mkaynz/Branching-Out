@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_04_06_212347) do
 
+ActiveRecord::Schema.define(version: 2021_04_06_043134) do
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,5 +29,26 @@ ActiveRecord::Schema.define(version: 2021_04_06_212347) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  create_table "ads", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "plant_id"
+    t.index ["plant_id"], name: "index_ads_on_plant_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.string "breed"
+    t.string "description"
+    t.decimal "price"
+    t.integer "stock"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "ads", "plants"
 
 end

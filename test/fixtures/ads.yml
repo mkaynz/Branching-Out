@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: ads
+#
+#  id         :bigint           not null, primary key
+#  body       :string
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  plant_id   :bigint
+#
+# Indexes
+#
+#  index_ads_on_plant_id  (plant_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (plant_id => plants.id)
+#
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+title: Creepy but Cool B)
+body: Some body here
+plant: one 
+
+two:
+title: These Tigers Don't Bite
+body: IDK why this is here
+plant: two
