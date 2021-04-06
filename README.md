@@ -3,7 +3,6 @@
 ## Authors
 
 - Cameron Futrell
-- Cayla Taylor
 - McKenzie Holliday
-
-
+- Emmanuel Opara
+- Cayla Taylor
