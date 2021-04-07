@@ -2,8 +2,11 @@
 
 <%= bootstrap_form_with model: @ad, url: ads_path, method: :post, local: true do |x| %>
 
-<%= x.text_field :title %>
-<%= x.text_field :body %>
-<%= x.submit %>
+    <%= x.text_field :title %>
+    <%= x.number_field :price %>
+    <%= x.number_field :stock %>
+    <%= x.submit %>
 
 <% end %>
+
+<%= link_to 'Cancel', ads_path, class: 'btn btn-primary' %>

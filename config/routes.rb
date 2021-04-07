@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   get 'ads', to: 'ads#index', as: 'ads'
   get 'ads/new', to: 'ads#new', as: 'new_ad'
+  post 'ads', to: 'ads#create'
   
 end
