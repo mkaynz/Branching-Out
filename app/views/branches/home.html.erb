@@ -16,20 +16,35 @@ body {
 
 
 <body>
-<%= image_tag 'pinkflower.jpg',
-    class: 'w-15', 
-    style: 'max-width: 22rem;'
+  <div class="row">
+  <%= image_tag 'pinkflower.jpg',
+    # class: 'w-15',
+    class: 'col mb-2',
+    size: "270x183",
+    style: "object-fit: cover;"
+
 %> 
-<%= image_tag 'chrysanthemum.jpg',
-    class: 'w-15', 
-    style: 'max-width: 22rem;' %>
-<%= image_tag 'Yllow.jpg',
-    class: 'w-15', 
-    style: 'max-width: 23rem;' %>
+  <%= image_tag 'chrysanthemum.jpg',
+    # class: 'w-15',
+    class: 'col mb-2',
+    size: "270x183",
+    style: "object-fit: cover;"
+
+    %>
+  <%= image_tag 'Yllow.jpg',
+    # class: 'w-15',
+    class: 'col mb-2',
+    size: "270x183",
+    style: "object-fit: cover;"
+   %>
 
   <%= image_tag 'daisy2.jpg',
-    class: 'w-15', 
-    style: 'max-width: 23rem;' %>
+    # class: 'w-15',
+    class: 'col mb-2',
+    size: "270x183",
+    style: "object-fit: cover;"
+     %>
+</div>
 </body>
 <hr>
 <p style="font-size:25px;">
@@ -55,7 +70,8 @@ This is a safe, free space for plant lovers to unite, so enjoy the full feauture
   </div>
   <div class="w3-containter w3-grey">
     <article>honestly i love having a cactus, but sometimes it is rlly hard to keep it hydrated. Any thoughts or advice on how to keep a cactus hydrated?</article>
-    <button type="button" class="btn btn-dark">Comments <span class="badge">62</span></button> 
+    <button type="button" class="btn btn-dark"><%= link_to 'Comments',new_user_registration_path %> <span class="badge">15</span></button> 
+    <button type="button" class="btn btn-dark">Shares <span class="badge">10</span></button>
   </div>
 
   <div class="w3-container w3-black"> 
@@ -63,7 +79,8 @@ This is a safe, free space for plant lovers to unite, so enjoy the full feauture
   </div>
   <div class="w3-containter w3-grey">
     <article>Lol you cant. lillies are by far the most annoying plants i have ever bought. 1/10 would not recommend.</article>
-    <button type="button" class="btn btn-dark">Comments <span class="badge">62</span></button> 
+    <button type="button" class="btn btn-dark"><%= link_to 'Comments',new_user_registration_path %> <span class="badge">10</span></button> 
+    <button type="button" class="btn btn-dark">Shares <span class="badge">4</span></button>
   </div>
 
     <div class="w3-container w3-black"> 
@@ -71,7 +88,8 @@ This is a safe, free space for plant lovers to unite, so enjoy the full feauture
     </div>
     <div class="w3-containter w3-grey">
         <article>soooo here me out. For Valentine's Day, everyone always buys roses. but wh yhave roses been like the flower standard? They are not even that nice imo.</article>
-        <button type="button" class="btn btn-dark">Comments <span class="badge">60</span></button> 
+        <button type="button" class="btn btn-dark"><%= link_to 'Comments',new_user_registration_path %> <span class="badge">7</span></button> 
+        <button type="button" class="btn btn-dark">Shares <span class="badge">2</span></button>
   </div>
 
 
