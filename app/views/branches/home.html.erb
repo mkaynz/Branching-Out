@@ -1,6 +1,19 @@
 <% content_for(:html_title) {' Home' }%>
 
 
+<head>
+<style>
+body {
+  background-color: coral;
+}
+</style>
+</head>
+
+
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 
 <body>
 <%= image_tag 'pinkflower.jpg',
@@ -9,7 +22,7 @@
 %> 
 <%= image_tag 'chrysanthemum.jpg',
     class: 'w-15', 
-    style: 'max-width: 23rem;' %>
+    style: 'max-width: 20rem;' %>
 <%= image_tag 'Yllow.jpg',
     class: 'w-15', 
     style: 'max-width: 23rem;' %>
@@ -26,7 +39,31 @@ create blogs posts to share your thoughts about particular plants, or you can br
 This is a safe, free space for plant lovers to unite, so enjoy the full feautures of this site by signing up!
 </p>
 
-<h1>
-  <center>
-  Popular Posts 🔥 </center>
-</h1>
+    <center>
+    <div class="container">
+      <h1>Popular Posts 🔥</h1>
+      <div class="panel panel-default">
+      </div>
+    </div>
+  </center>
+
+<body>
+  <div class="w3-container w3-darkgrey"> 
+    <h2>Struggles of having a pet cactus</h2>
+      <article>Okay so I bought a cacutus. I am having problems with keeping it hydrated...</article>
+      <button type="button" class="btn btn-dark">Comments <span class="badge">78</span></button>    
+  </div>
+
+  <div class="w3-container w3-darkgrey"> 
+    <h2>How to keep Lillies from dying</h2>
+      <article>Lol you cant</article>
+      <button type="button" class="btn btn-dark">Comments <span class="badge">62</span></button> 
+  </div>
+
+    <div class="w3-container w3-darkgrey"> 
+      <h2>Unpopular Opinion: Roses are the worst flower.</h2>
+        <article>soooo here me out. For Valentine's Day, everyone...</article>
+        <button type="button" class="btn btn-dark">Comments <span class="badge">60</span></button> 
+  </div>
+
+</body>
