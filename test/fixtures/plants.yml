@@ -14,12 +14,10 @@ one:
   name: Sunflower
   breed: 
   description: These flowers always face the direction of the sun.
-  price: 20.00
-  stock: 16
+
 
 two:
   name: Pansy Viola
   breed: Tiger Eye
   description: 
-  price: 21.99
-  stock: 9
+

@@ -10,12 +10,12 @@ class AdsController < ApplicationController
     end
 
     def create
-        @ad = Ad.new(params.require(:ad).permit(:title))
+        @ad = Ad.new(params.require(:ad).permit(:title, :price, :stock))
         if @ad.save
             flash[:success] = "New Ad added!"
             redirect_to ads_url
         else
-            flash[:error] = "Ad failed to create!"
+            flash.now[:error] = "Failure to create!"
             render :new
         end
     end

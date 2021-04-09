@@ -19,6 +19,10 @@
 #  fk_rails_...  (plant_id => plants.id)
 #
 class Ad < ApplicationRecord
+    validates :title, presence: true
+    validates :price, presence: true
+    validates :stock, presence: true
+
     belongs_to(
         :plant,
         class_name: 'Plant',
