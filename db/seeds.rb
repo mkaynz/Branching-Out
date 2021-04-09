@@ -11,14 +11,13 @@ plant1 = Plant.create!(
     name: 'Perlwort Colobanthus Quitensis',
     breed: '',
     description: 'This plant grows in Antartica! Crazy, right?!',
-    price: 12.99,
-    stock: 6
 )
 
 # Plant 1 Ad
 Ad.create!(
     title: 'Cool Flowers Ready for Winter!?',
-    body: '---',
+    price: 12.99,
+    stock: 6,
     plant: plant1
 )
 
@@ -27,14 +26,14 @@ plant2 = Plant.create!(
     name: 'Marguerite Daisy',
     breed: '',
     description: 'Marguerite daisy flowers are a small shrub-like perennial in the family Asteraceae, which are native to the Canary Islands. This little herbaceous perennial is a nice addition to flower beds, borders or as a container specimen.',
-    price: 4.99,
-    stock: 20
+
 )
 
 # Plant 2 Ad
 Ad.create!(
     title: 'Buy These Flowers!!',
-    body: '---',
+    price: 4.99,
+    stock: 20,
     plant: plant2
 )
 
@@ -43,13 +42,12 @@ plant3 = Plant.create!(
     name: 'Hibiscus',
     breed: '',
     description: 'Hibiscus is a genus of flowering plants in the mallow family, Malvaceae. The genus is quite large, comprising several hundred species that are native to warm temperate, subtropical and tropical regions throughout the world.',
-    price: 15.99,
-    stock: 3
 )
 
 # Plant 3 Ad
 Ad.create!(
     title: 'Flowers Brighter than the Sun!',
-    body: '---',
+    price: 15.99,
+    stock: 3,
     plant: plant3
 )
