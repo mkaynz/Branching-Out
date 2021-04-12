@@ -3,7 +3,8 @@
 # Table name: ads
 #
 #  id         :bigint           not null, primary key
-#  body       :string
+#  price      :decimal(, )
+#  stock      :integer
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -20,7 +21,29 @@
 require "test_helper"
 
 class AdTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "fixtures are valid" do
+    ads.each do |ad|
+      assert ad.valid?, ad.errors.full_messages.inspect 
+    end
+  end
+
+  test "title must be present" do
+    x = ads(:one)
+    x.title = ''
+    assert_not x.title?
+  end
+
+  test "price must be present" do
+    x = ads(:one)
+    x.price = ''
+    assert_not x.price?
+  end
+
+  test "stock must be present" do
+    x = ads(:one)
+    x.stock = ''
+    assert_not x.stock?
+  end
+
+
 end
