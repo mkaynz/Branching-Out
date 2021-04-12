@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   get 'ads', to: 'ads#index', as: 'ads'
   get 'ads/new', to: 'ads#new', as: 'new_ad'
   
+  get 'posts', to: 'posts#index', as: 'posts'
+  post 'posts', to: 'posts#create'
+  get 'posts/new', to: 'posts#new', as: 'new_post'
+  get 'posts/:id', to: 'posts#show', as: 'post'
+
+  get 'comments/:id', to: 'comments#show', as: 'comment'
 end
