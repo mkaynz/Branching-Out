@@ -51,3 +51,22 @@ Ad.create!(
     stock: 3,
     plant: plant3
 )
+
+# Post #1 
+
+Post.create!(
+    title: "It's the roses for me",
+    description: "I recently bought new roses! I cannot BELIEVE how nice they are. 
+    What's the best way to take care of them? If anyone knows, leave a comment. Thanks guys! I'll keep
+    you all updated!"
+)
+
+Post.create!(
+    title: "I love daisies!!!",
+    description: "I am in in love with anything daisyyy! Lately, I could not find any FRESH daisies anywhere.
+    Where can I find some? If anyone knows, leave a link in the comments. Keep flowering!"
+)
+
+comment1 = Comment.create!(
+    body: 'I love this!'
+)
