@@ -1,0 +1,29 @@
+<head>
+<style>
+body {
+  background-color: purple;
+}
+</style>
+</head>
+
+
+<h1><a href="#" class="text-white bg-dark"><center> Blog Posts </center></a></h1>
+
+<tbody>
+<% @posts.each do |post| %>
+<div class="card text-white bg-info mb-3" style="width: 70rem;">
+  
+  <div class="card-body">
+    <h1 class="card-title"><%= post.title %></h1>
+    <center><p class="card-text"><%= post.description %></p></center>
+    
+    
+  </div>
+</div>
+<% end %>
+</tbody>
+
+<p></p>
+<p class="text-right">
+  <%= link_to "Create New Post", new_post_path, class: 'btn btn-primary' %>
+</p>
