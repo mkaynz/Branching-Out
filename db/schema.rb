@@ -25,14 +25,8 @@ ActiveRecord::Schema.define(version: 2021_04_09_025213) do
     t.index ["plant_id"], name: "index_ads_on_plant_id"
   end
 
-  create_table "ads", force: :cascade do |t|
-    t.string "title"
-    t.decimal "price"
-    t.integer "stock"
-
   create_table "comments", force: :cascade do |t|
     t.string "body"
-
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
