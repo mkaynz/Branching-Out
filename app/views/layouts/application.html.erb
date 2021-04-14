@@ -36,7 +36,7 @@
         <a class="nav-link" href="#"><%= link_to 'Shop', ads_path, class: 'nav-link' %></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Inbox</a>
+        <a class="nav-link" href="#"><%= link_to 'Inbox', conversations_path, class: 'nav-link' %></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -48,6 +48,13 @@
   <body>
     <main role="main" class="container">
             <p class="mt-1 text-right">
+              <head>
+              <style>
+              body {
+                background-color: coral;
+              }
+              </style>
+              </head>
 
             <% if user_signed_in? %>
               <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-dark btn-dark'%>

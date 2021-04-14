@@ -1,17 +1,30 @@
 
+<head>
+<style>
+body {
+  background-color: coral;
+}
+</style>
+</head>
 
-<div class="panel panel-default">
-<% if @over_5 %>
- <%= link_to 'Show All', '?m=all', class: 'btn btn-link pull-right' %>
-<% end %>
-<%= link_to '<i class="glyphicon glyphicon-log-out icon-flipped"></i>'.html_safe,
-'/conversations', { :class => 'tooltips, btn btn-link', 'data-toggle' => 'tooltip',
-   'data-placement' => 'right', :title => 'Back To Inbox' } %>
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
+
+<hr>
+    <center>
+    <div class="container">
+      <h1>Inbox ✉️</h1>
+      <div class="panel panel-default">
+      </div>
+    </div>
+  </center>
+<hr>
+
+<p>
+<button type="button" class='btn btn-dark btn-dark'>
+  <h4><%= link_to 'Back',conversations_path %></h4></button></li>
+</p>
+
+<hr>
+
  <% @messages.each do |message| %>
   <% if message.body %>
    <% user = User.find(message.user_id) %>
@@ -37,7 +50,7 @@ $(document).ready(function(){
 </div>
   <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
 <div class="form-group">
-  <%= f.submit "Send Reply", class: "form-control btn btn-primary" %>
+  <%= f.submit "Send Reply", class:'btn btn-dark btn-dark' %>
 </div>
 <% end %>
 </div>

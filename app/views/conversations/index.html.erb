@@ -1,19 +1,35 @@
+<head>
+<style>
+body {
+  background-color: coral;
+}
 </style>
+</head>
+
+
+<hr>
+    <center>
+    <div class="container">
+      <h1>Inbox ✉️</h1>
+      <div class="panel panel-default">
+      </div>
+    </div>
+  </center>
+<hr>
+
   <div class="list-group col-md-3">
   <ul class="nav nav-pills nav-stacked">
-    <li><button type="button" class="list-group-item"
-    data-toggle="collapse" data-target="#mail"><h4>Conversations
-      <i class="glyphicon glyphicon-inbox"></i></h4></button></li>
-    <li><button type="button" class="list-group-item"
-    data-toggle="collapse" data-target="#new"><h4>New Message
-      <i class="glyphicon glyphicon-new-window" style="vertical-align:right;"></i></h4></button></li>
+    <li><button type="button" class='btn btn-dark btn-dark'
+    data-toggle="collapse" data-target="#mail"><h4>Conversations</h4></button></li>
+    <li><button type="button" class='btn btn-dark btn-dark'
+    data-toggle="collapse" data-target="#new"><h4>New Message</h4></button></li>
   </ul>
 </div>
-<h1>My Inbox</h1>
+
 <div class="panel panel-default">
 <div class="col-lg-6">
   <div id="mail" class="collapse">
-    <h1 class="panel-heading">All Conversations:</h1>
+    <h1 class="panel-heading">Chat with:</h1>
     <div class="panel-body">
      <div class="item">
       <% @conversations.each do |conversation| %>
@@ -31,7 +47,7 @@
    </div>
   <div id="new" class="collapse">
     <div class="panel-body">
-     <h1 class="panel-heading">All Users:</h1>
+     <h1 class="panel-heading">Your Contacts: </h1>
        <% @users.each do |user| %>
         <% if user.id != current_user.id %>
          <div class="item"><h3>
@@ -44,3 +60,4 @@
   </div>
 </div>
 </div>
+
