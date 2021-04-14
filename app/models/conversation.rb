@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: conversations
+#
+#  id           :bigint           not null, primary key
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  recipient_id :integer
+#  sender_id    :integer
+#
 class Conversation < ApplicationRecord
     belongs_to :sender, :foreign_key => :sender_id, class_name: 'User'
     belongs_to :recipient, :foreign_key => :recipient_id, class_name: 'User'
