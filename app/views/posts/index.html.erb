@@ -1,23 +1,25 @@
 <head>
 <style>
 body {
-  background-color: purple;
+  background-color: coral;
 }
 </style>
 </head>
 
 
-<h1><a href="#" class="text-white bg-dark"><center> Blog Posts </center></a></h1>
+<h1><a href="#" class="text-dark "><center> Blog Posts 📝</center></a></h1>
 
 <tbody>
 <% @posts.each do |post| %>
-<div class="card text-white bg-info mb-3" style="width: 70rem;">
+<div class="card border-dark bg-light mb-3" style="width: 70rem;">
   
   <div class="card-body">
     <h1 class="card-title"><%= post.title %></h1>
     <center><p class="card-text"><%= post.description %></p></center>
-    
-    
+  <p>
+  <%= link_to 'Comments', post_comments_path(post), class: 'btn btn-danger' %>
+  </p>
+
   </div>
 </div>
 <% end %>

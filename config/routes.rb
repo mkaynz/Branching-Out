@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   get 'posts/new', to: 'posts#new', as: 'new_post'
   get 'posts/:id', to: 'posts#show', as: 'post'
 
-  get 'comments/:id', to: 'comments#show', as: 'comment'
+  get 'posts/:post_id/comments', to: 'comments#index', as: 'post_comments'
+  get 'posts/:post_id/comments/new', to: 'comments#new', as: 'new_post_comment'
+  post 'posts/:post_id/comments', to: 'comments#create'
 end
