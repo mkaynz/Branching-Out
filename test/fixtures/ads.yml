@@ -3,8 +3,6 @@
 # Table name: ads
 #
 #  id         :bigint           not null, primary key
-#  price      :decimal(, )
-#  stock      :integer
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -25,12 +23,8 @@
 #
 one:
   title: Creepy but Cool B)
-  price: 2.00
-  stock: 2
   plant: one 
 
 two:
   title: These Tigers Don't Bite
-  price: 2.00
-  stock: 1
   plant: one

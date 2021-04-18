@@ -6,6 +6,8 @@
 #  breed       :string
 #  description :string
 #  name        :string
+#  price       :decimal(, )
+#  stock       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

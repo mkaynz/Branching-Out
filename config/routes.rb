@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get 'home', to: 'branches#home', as: 'home'
 
+  get 'flowers', to: 'flowers#index', as: 'flowers'
+  get 'flowers/:id', to: 'flowers#show', as: 'flower'
+
   get 'ads', to: 'ads#index', as: 'ads'
   post 'ads', to: 'ads#create'
   get 'ads/new', to: 'ads#new', as: 'new_ad'

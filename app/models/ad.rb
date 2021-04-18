@@ -3,8 +3,6 @@
 # Table name: ads
 #
 #  id         :bigint           not null, primary key
-#  price      :decimal(, )
-#  stock      :integer
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

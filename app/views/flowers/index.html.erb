@@ -1,0 +1,22 @@
+<h1>List O' Flowers</h1>
+
+<table class = "table table-striped table-hover">
+
+    <thead class = "thead-dark">
+        <tr>
+            <th> Name </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <body>
+        <% @plants.each do |plant| %>
+            <tr>
+                <td><%= plant.name %></td>
+                <td><%= link_to 'Show', flower_path(plant) %> </td>
+
+            </tr>
+        <%end%>
+    </body>
+
+</table>

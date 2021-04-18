@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 2021_04_06_043134) do
 
   create_table "ads", force: :cascade do |t|
     t.string "title"
-    t.decimal "price"
-    t.integer "stock"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "plant_id"
@@ -29,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_04_06_043134) do
     t.string "name"
     t.string "breed"
     t.string "description"
+    t.decimal "price"
+    t.integer "stock"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
