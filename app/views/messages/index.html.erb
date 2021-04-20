@@ -1,0 +1,56 @@
+
+<head>
+<style>
+body {
+  background-color: coral;
+}
+</style>
+</head>
+
+
+<hr>
+    <center>
+    <div class="container">
+      <h1>Inbox ✉️</h1>
+      <div class="panel panel-default">
+      </div>
+    </div>
+  </center>
+<hr>
+
+<p>
+<button type="button" class='btn btn-dark btn-dark'>
+  <h4><%= link_to 'Back',conversations_path %></h4></button></li>
+</p>
+
+<hr>
+
+ <% @messages.each do |message| %>
+  <% if message.body %>
+   <% user = User.find(message.user_id) %>
+   <div class="item">
+<div class="panel-heading">
+       <div class="header"><strong><%= user.email %> </strong><%= message.message_time %></div>
+      <div class="list">
+       <div class="item">
+        <i class="right triangle icon"></i>
+        <%= message.body %>
+      </div>
+    </div>
+   </div>
+ </div>
+ <% end %>
+<% end %>
+</div>
+</div>
+<div class="col-md-10 col-md-offset-1">
+<%= form_for [@conversation, @message] do |f| %>
+<div class="form-group">
+  <%= f.text_area :body, class: "form-control" %>
+</div>
+  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+<div class="form-group">
+  <%= f.submit "Send Reply", class:'btn btn-dark btn-dark' %>
+</div>
+<% end %>
+</div>
