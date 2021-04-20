@@ -9,7 +9,7 @@ body {
 
 <h1><center> Create New Blog Post ✏️</center> </h1>
 
-<%= bootstrap_form_with model: @post, url: posts_path, method: :post, local: true do |f| %>
+<%= bootstrap_form_with model: @post, url: posts_path(@post), method: :post, local: true do |f| %>
 
     <%= f.text_field :title %>
     <%= f.text_area :description %>
