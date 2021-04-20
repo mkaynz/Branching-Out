@@ -54,19 +54,50 @@ Ad.create!(
 
 # Post #1 
 
-Post.create!(
-    title: "It's the roses for me",
+post1 = Post.create!(
+    title: "It's the roses for me 🌹",
     description: "I recently bought new roses! I cannot BELIEVE how nice they are. 
     What's the best way to take care of them? If anyone knows, leave a comment. Thanks guys! I'll keep
-    you all updated!"
+    you all updated!",
+    
 )
 
-Post.create!(
-    title: "I love daisies!!!",
+post2 = Post.create!(
+    title: "I love daisies!!! 🌼🌼🌼",
     description: "I am in in love with anything daisyyy! Lately, I could not find any FRESH daisies anywhere.
-    Where can I find some? If anyone knows, leave a link in the comments. Keep flowering!"
+    Where can I find some? If anyone knows, leave a link in the comments. Keep flowering!",
+    
 )
 
 comment1 = Comment.create!(
-    body: 'I love this!'
+    body: 'I love this post! I too am looking to buy some roses. Could you direct me to the page that 
+    you bought them from? Thanks.',
+    post: post1
+)
+
+comment2 = Comment.create!(
+    body: 'I agree with the comment above me^ This is a solid post. Keep it up!👍',
+    post: post1
+)
+
+comment3 = Comment.create!(
+    body: 'I hate this post!👎 Daises are ABSOLUTELY terrible! Do NOT make a post like
+    this again - Thanks management',
+    post: post2
+)
+
+comment4 = Comment.create!(
+    body: 'The comment above me is just a hater. Block out the negativity.
+    Keep up the great work sweetie!',
+    post: post2
+)
+
+user1 = User.create!(
+  email: "bob@email.com",
+  password: "password"
+)
+
+user2 = User.create!(
+  email: "alice@email.com",
+  password: "password"
 )
