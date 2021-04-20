@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id          :bigint           not null, primary key
+#  description :string
+#  title       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  title: It's the roses for me
+  description: Roses
+
+two:
+  title: It's the roses for me
+  description: Daises

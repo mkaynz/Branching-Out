@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  devise_for :users
+  get 'home', to: 'branches#home', as: 'home'
   root to: redirect('/home')
 
-  get 'home', to: 'branches#home', as: 'home'
+  resources :conversations do
+    resources :messages
+  end
+  
 
   get 'plants', to: 'plants#index', as: 'plants'
   post 'plants', to: 'plants#create'
@@ -23,4 +28,12 @@ Rails.application.routes.draw do
   post 'ads', to: 'ads#create'
   get 'ads/new', to: 'ads#new', as: 'new_ad'
   
+  get 'posts', to: 'posts#index', as: 'posts'
+  post 'posts', to: 'posts#create'
+  get 'posts/new', to: 'posts#new', as: 'new_post'
+  get 'posts/:id', to: 'posts#show', as: 'post'
+
+  get 'posts/:post_id/comments', to: 'comments#index', as: 'post_comments'
+  get 'posts/:post_id/comments/new', to: 'comments#new', as: 'new_post_comment'
+  post 'posts/:post_id/comments', to: 'comments#create'
 end

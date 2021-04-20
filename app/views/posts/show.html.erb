@@ -1,0 +1,17 @@
+<h1><center> <%= @post.title %> </center></h1>
+
+<p>
+ Description: 
+ <tr>
+ <%= @post.description %>
+ </tr>
+
+
+ <p>
+ <right>
+  <%= link_to "Create New Post", new_post_path, class: 'btn btn-primary' %>
+</right>
+</p>
+
+</p>
+
