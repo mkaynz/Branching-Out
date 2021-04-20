@@ -1,0 +1,7 @@
+<h1>Edit Review</h1>
+
+<%= bootstrap_form_with model: @review, method: :patch, url: plant_reviews_path(@plant, @review), local: true do |x| %>
+    <%= x.text_area :body%>
+    <%= x.number_field :rating %>
+    <%= x.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1><%= @plant.name %>'s Reviews</h1>
+
+<%= link_to 'Add Review', new_plant_review_path(@plant), class: 'btn btn-secondary' %>
+
+<% @reviews.each do |review| %>
+    <p><%= review.body %></p>
+    <p><%= review.rating %></p>
+
+<% end %>
+
+<%= link_to 'Back', plant_path(@plant), class: 'btn btn-secondary' %>

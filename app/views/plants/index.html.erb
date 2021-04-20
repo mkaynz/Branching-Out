@@ -6,6 +6,7 @@
         <tr>
             <th> Name </th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
 
@@ -13,10 +14,14 @@
         <% @plants.each do |plant| %>
             <tr>
                 <td><%= plant.name %></td>
-                <td><%= link_to 'Show', flower_path(plant) %> </td>
-
+                <td><%= link_to 'Show', plant_path(plant) %> </td>
+                <td><%= link_to 'Delete', plant_path(plant), method: :delete %> </td>
             </tr>
         <%end%>
     </body>
 
 </table>
+
+<p>
+    <%= link_to "Add Flower", new_plant_path, class: 'btn btn-primary' %>
+</p>

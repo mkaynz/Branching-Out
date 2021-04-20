@@ -21,6 +21,12 @@ Ad.create!(
     plant: plant1
 )
 
+Review.create!(
+    body: 'Not the best looking flower but whatever...',
+    rating: 5,
+    plant: plant1
+)
+
 # Plant 2
 plant2 = Plant.create!(
     name: 'Marguerite Daisy',
