@@ -1,0 +1,103 @@
+<h1>Flower Information</h1>
+
+<!-- <style>
+h4 {text-align: center;}
+</style> -->
+
+<h4><u><%= @plant.name %></u> <%= link_to 'Edit', edit_plant_path, class: 'btn btn-secondary' %> </h4>
+
+<p>Price: $<%= @plant.price %></p>
+<p>Stock: <%= @plant.stock %></p>
+
+
+
+
+
+<head>
+<style>
+.dropbtn {
+  background-color: #82caff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 16px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+</head>
+<body>
+
+<div class="btn-group">
+    <div class="dropdown">
+        <button class="dropbtn">Description</button>
+        <div class="dropdown-content">
+            <p><%= @plant.description %></p>
+        </div>    
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Tips</button>
+        <div class="dropdown-content">
+            <p>TBA</p>
+        </div>   
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn"><%= link_to 'Reviews', plant_reviews_path(@plant) %></button>
+        <div class="dropdown-content">
+            <% @reviews.each do |review| %>
+                <p><%= review.body %></p>
+                <p>Rating: <%= review.rating %></p>
+            <% end %>
+        </div>    
+    </div>
+</div>
+
+<table class = "table table-striped table-hover">
+
+    <thead class = "thead-dark">
+        <tr>
+            <th> Ad </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <body>
+        <% @ads.each do |ad| %>
+            <tr>
+                <td><%= ad.title %></td>
+                <td><%= link_to 'Show', plant_path(ad) %> </td>
+
+            </tr>
+        <%end%>
+    </body>
+
+</table>
+
+<%= link_to "Back", plants_path, class: 'btn btn-secondary'%>
