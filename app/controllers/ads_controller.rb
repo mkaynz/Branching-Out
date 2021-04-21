@@ -1,6 +1,7 @@
 class AdsController < ApplicationController
     def index
         @ads = Ad.all
+        @plant = Plant.all
         render :index
     end
 
