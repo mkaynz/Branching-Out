@@ -19,10 +19,12 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(params.require(:post).permit(:title, :description))
+        @post.creator = current_user
         if @post.save
           flash[:success] = "New blog post successfully created!"
           redirect_to posts_url
         else
+          puts @post.errors.full_messages
           flash.now[:error] = "Blog Post creation failed"
           render :new
         end

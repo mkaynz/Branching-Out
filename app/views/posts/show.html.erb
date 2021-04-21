@@ -1,16 +1,21 @@
+<head>
+<style>
+body {
+  background-color: coral;
+}
+</style>
+</head>
+
 <h1><center> <%= @post.title %> </center></h1>
 
 <p>
- Description: 
- <tr>
  <%= @post.description %>
- </tr>
+ 
+</p>
 
 
- <p>
- <right>
+<p>
   <%= link_to "Create New Post", new_post_path, class: 'btn btn-primary' %>
-</right>
 </p>
 
 </p>
