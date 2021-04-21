@@ -4,9 +4,9 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :breed
       t.string :description
-      t.decimal :price
+      t.float :price
       t.integer :stock
-
+      
       t.timestamps
     end
   end

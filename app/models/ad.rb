@@ -3,7 +3,6 @@
 # Table name: ads
 #
 #  id         :bigint           not null, primary key
-#  body       :string
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -18,6 +17,8 @@
 #  fk_rails_...  (plant_id => plants.id)
 #
 class Ad < ApplicationRecord
+    validates :title, presence: true
+
     belongs_to(
         :plant,
         class_name: 'Plant',

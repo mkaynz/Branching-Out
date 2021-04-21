@@ -6,7 +6,7 @@
 #  breed       :string
 #  description :string
 #  name        :string
-#  price       :decimal(, )
+#  price       :float
 #  stock       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -16,12 +16,14 @@ one:
   name: Sunflower
   breed: 
   description: These flowers always face the direction of the sun.
-  price: 20.00
-  stock: 16
+  price: 1.99
+  stock: 1
+
 
 two:
   name: Pansy Viola
   breed: Tiger Eye
   description: 
-  price: 21.99
-  stock: 9
+  price: 1.99
+  stock: 1
+

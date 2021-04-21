@@ -1,0 +1,18 @@
+<h1>Add New Flower</h1>
+
+<%= bootstrap_form_with model: @plant, url: plants_path, method: :post, local: true do |x| %>
+
+    <%= x.text_field :name %>
+    <%= x.text_field :breed %>
+    <%= x.text_area :description %>
+    <%= x.number_field :price, step: :any %>
+    <%= x.number_field :stock %>
+    <%= x.label :image, "Upload Picture:" %>
+    <%= x.file_field :image %>
+    <%= x.submit %>
+
+<% end %>
+
+<p>
+    <%= link_to "Cancel", plants_path, class: 'btn btn-primary' %>
+</p>

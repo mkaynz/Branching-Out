@@ -1,6 +1,17 @@
 <h1>Ads</h1>
 
 <head>
+<style>
+body {
+  background-color: coral;
+}
+</style>
+</head>
+<p>
+    <%= link_to 'Create New Ad', new_ad_path, class: 'btn btn-primary' %>
+</p>
+
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
@@ -35,8 +46,8 @@
             <h4><%= ad.title %></h4>
             <p>Pic Here...</p>
             <p>Name: <%= ad.plant.name %></p>
-            <p>Price: $<%= ad.plant.price %></p>
-            <p>Stock: <%= ad.plant.stock %></p>
+            <p>Price: $<%= ad.price %></p>
+            <p>Stock: <%= ad.stock %></p>
         </div>
 
     <% end %>
