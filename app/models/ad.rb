@@ -3,8 +3,6 @@
 # Table name: ads
 #
 #  id         :bigint           not null, primary key
-#  price      :decimal(, )
-#  stock      :integer
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -20,8 +18,6 @@
 #
 class Ad < ApplicationRecord
     validates :title, presence: true
-    validates :price, presence: true
-    validates :stock, presence: true
 
     belongs_to(
         :plant,

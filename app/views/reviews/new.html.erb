@@ -1,0 +1,12 @@
+<h1>Write a Review</h1>
+
+
+
+<%= bootstrap_form_with model: @review, method: :post, url: plant_reviews_path(@plant), local: true do |x| %>
+    <%= x.text_area :body%>
+    <%= x.number_field :rating %>
+    <%= x.submit %>
+<% end %>
+
+<%= link_to 'Back', plant_reviews_path(@plant), class: 'btn btn-secondary' %>
+
