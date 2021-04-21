@@ -9,4 +9,13 @@
 #  updated_at :datetime         not null
 #
 class Order < ApplicationRecord
+
+    has_many(
+        :line_items,
+        class_name: 'LineItem',
+        foreign_key: 'order_id',
+        inverse_of: :order,
+        dependent: :destroy
+
+    )
 end
