@@ -46,8 +46,9 @@ body {
             <h4><%= ad.title %></h4>
             <p>Pic Here...</p>
             <p>Name: <%= ad.plant.name %></p>
-            <p>Price: $<%= ad.price %></p>
-            <p>Stock: <%= ad.stock %></p>
+            <p>Price: $<%= ad.plant.price %></p>
+            <p>Stock: <%= ad.plant.stock %></p>
+            <%= link_to 'View Info', plants_path, class: 'btn btn-secondary'%>
         </div>
 
     <% end %>
