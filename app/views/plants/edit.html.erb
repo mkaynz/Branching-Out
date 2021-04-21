@@ -1,0 +1,16 @@
+<h1> Edit Plant</h1>
+
+<%= bootstrap_form_with model: @plant, url: plant_path(@plant), method: :patch, local: true do |x| %>
+
+    <%= x.text_field :name %>
+    <%= x.text_field :breed %>
+    <%= x.text_area :description %>
+    <%= x.number_field :price, step: :any %>
+    <%= x.number_field :stock %>
+    <%= x.label :image, "Upload Picture:" %>
+    <%= x.file_field :image %>
+    <%= x.submit %>
+
+<% end %>
+
+<%= link_to "Back", edit_plant_path, class: 'btn btn-secondary'%>

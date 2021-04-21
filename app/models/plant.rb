@@ -6,16 +6,29 @@
 #  breed       :string
 #  description :string
 #  name        :string
-#  price       :decimal(, )
+#  price       :float
 #  stock       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 class Plant < ApplicationRecord
+    validates :price, presence: true
+    validates :stock, presence: true
+
+    has_many_attached :image
+
     has_many(
         :ads,
         class_name: 'Ad',
-        foreign_key: 'ad_id',
+        foreign_key: 'plant_id',
+        inverse_of: :plant,
+        dependent: :destroy
+    )
+
+    has_many(
+        :reviews,
+        class_name: 'Review',
+        foreign_key: 'plant_id',
         inverse_of: :plant,
         dependent: :destroy
     )
