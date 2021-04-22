@@ -53,4 +53,8 @@ class PlantsController < ApplicationController
         flash[:success] = "There is No Trace of that Plant Anymore!"
         redirect_to plants_url
     end
+
+    private
+    def plant_params
+        params.require(:plant).permit(:name, :breed, :description, :price, :stock)
 end
