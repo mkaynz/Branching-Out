@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'ads', to: 'ads#index', as: 'ads'
   post 'ads', to: 'ads#create'
   get 'ads/new', to: 'ads#new', as: 'new_ad'
+  get 'checkout', to: 'checkouts#index', as: 'checkout' #route for the checkout enopara
+  
   
   get 'posts', to: 'posts#index', as: 'posts'
   post 'posts', to: 'posts#create'

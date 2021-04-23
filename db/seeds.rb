@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+user1 = User.create!(
+  email: "bob@email.com",
+  password: "password"
+)
+
+user2 = User.create!(
+  email: "alice@email.com",
+  password: "password"
+)
+
 # Plant 1
 plant1 = Plant.create!(
     name: 'Perlwort Colobanthus Quitensis',
@@ -69,14 +79,14 @@ post1 = Post.create!(
     description: "I recently bought new roses! I cannot BELIEVE how nice they are. 
     What's the best way to take care of them? If anyone knows, leave a comment. Thanks guys! I'll keep
     you all updated!",
-    
+    creator: user1
 )
 
 post2 = Post.create!(
     title: "I love daisies!!! 🌼🌼🌼",
     description: "I am in in love with anything daisyyy! Lately, I could not find any FRESH daisies anywhere.
     Where can I find some? If anyone knows, leave a link in the comments. Keep flowering!",
-    
+    creator: user2
 )
 
 comment1 = Comment.create!(
@@ -102,12 +112,3 @@ comment4 = Comment.create!(
     post: post2
 )
 
-user1 = User.create!(
-  email: "bob@email.com",
-  password: "password"
-)
-
-user2 = User.create!(
-  email: "alice@email.com",
-  password: "password"
-)
