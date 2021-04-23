@@ -16,13 +16,29 @@ user2 = User.create!(
   password: "password"
 )
 
+user3 = User.create!(
+  email: "afro@email.com",
+  password: "watch_rezero"
+)
+
+user4 = User.create!(
+  email: "lucy@email.com",
+  password: "password"
+)
+
+user5 = User.create!(
+  email: "natsu@email.com",
+  password: "password"
+)
+
 # Plant 1
 plant1 = Plant.create!(
-    name: 'Perlwort Colobanthus Quitensis',
+    name: 'Pearlwort',
     breed: '',
     description: 'This plant grows in Antartica! Crazy, right?!',
     price: 12.99,
-    stock: 6
+    stock: 6,
+    creator: user1
 )
 
 # Plant 1 Ad
@@ -31,9 +47,15 @@ Ad.create!(
     plant: plant1
 )
 
+# Plant 1 Review
 Review.create!(
     body: 'Not the best looking flower but whatever...',
     rating: 5,
+    plant: plant1
+)
+
+Tip.create!(
+    body: 'NUMBER ONE RULE -- Don\'t sit these flowers in the sun for too long! These flowers dry out easily',
     plant: plant1
 )
 
@@ -43,7 +65,8 @@ plant2 = Plant.create!(
     breed: '',
     description: 'Marguerite daisy flowers are a small shrub-like perennial in the family Asteraceae, which are native to the Canary Islands. This little herbaceous perennial is a nice addition to flower beds, borders or as a container specimen.',
     price: 4.99,
-    stock: 20
+    stock: 20,
+    creator: user2
 )
 
 # Plant 2 Ad
@@ -58,7 +81,8 @@ plant3 = Plant.create!(
     breed: '',
     description: 'Hibiscus is a genus of flowering plants in the mallow family, Malvaceae. The genus is quite large, comprising several hundred species that are native to warm temperate, subtropical and tropical regions throughout the world.',
     price: 15.99,
-    stock: 3
+    stock: 3,
+    creator: user2
 )
 
 # Plant 3 Ad
@@ -70,6 +94,62 @@ Ad.create!(
 Ad.create!(
     title: 'Just Buy This!',
     plant: plant3
+)
+
+plant4 = Plant.create!(
+    name: 'Piranaha Plant',
+    breed: 'Petey Piranaha',
+    description: 'Petey Piranha is a large mutant Piranha Plant with a ring of petals on his head. His first appearance is in Super Mario Sunshine, and since then he has become a common and recurring boss in Mario titles.',
+    price: 5999.99,
+    stock: 2,
+    creator: user3
+)
+
+Tip.create!(
+    body: 'I suggest keeping this plant in a cage. When feeding it, be sure to stand FAAAAR away. Giving it a load of bones will have it satisfied enough to maybe not eat you. Lastly if you\'re playing a sport Petey Piranaha is the perfect partner.',
+    plant: plant4
+)
+
+plant5 = Plant.create!(
+    name: 'Rose',
+    breed: 'Mister Lincoln',
+    description: '\'Mister Lincoln\' is a vigorous, tall upright shrub, 4 to 7 ft in height. Blooms are very large, 6 in or more in diameter, with 30 to 35 petals. The rose has a strong damask fragrance. The high-centered, deep red petals are generally borne singly on long stems and do not fade, even in the hottest climates. The shrub is a repeat bloomer. The buds are deep red and open up into large, velvety red, double blossoms. The foliage is dark red when young and becomes leathery and dark, matte green when the plant is older. It is generally healthy and heat tolerant, but is susceptible to blackspot.',
+    price: 21.55,
+    stock: 26,
+    creator: user4
+)
+
+plant6 = Plant.create!(
+    name: 'Bat Plant',
+    breed: '',
+    description: 'The bat flower is an exotic plant with flowers that mimic a bat in flight, deep purple with ruffled wings, and long, hanging filaments. Indoor blooms and those outside in semi-tropical climates may appear in spring and last until early autumn. Large, attractive leaves surround the bloom.',
+    price: 69.69,
+    stock: 8,
+    creator: user5
+)
+
+Tip.create!(
+    body: 'Be aware this thing doesn\'t fly. Now I don\'t want it 😠',
+    plant: plant6
+)
+
+Ad.create!(
+    title: 'Bat but It\'s a Plant',
+    plant: plant6
+)
+
+plant7 = Plant.create!(
+    name: 'Stinking Corpse Lily',
+    breed: '',
+    description: 'One of the world\'s largest and rarest flowering structures, the corpse flower is a pungent plant that blooms rarely and only for a short time. While it is in bloom, the flower emits a strong odor similar to rotting meat or, aptly, a decaying corpse. There is a good reason for the plant\'s strong odor',
+    price: 30.99,
+    stock: 13,
+    creator: user4
+)
+
+Tip.create!(
+    body: '🤮',
+    plant: plant7
 )
 
 # Post #1 
