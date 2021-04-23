@@ -10,11 +10,7 @@
     <% end %>
 </h4>
 
- <div class="form-group">
-    <% if @plant.image.attached? %>
-      <%= image_tag plant.image, style: "width: 200 px; display: block" %>
-    <%end%>
-    </div>
+
 
 <p>Price: $<%= @plant.price %></p>
 <p>Stock: <%= @plant.stock %></p>
