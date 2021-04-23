@@ -12,6 +12,7 @@ class PlantsController < ApplicationController
         @plant = Plant.find(params[:id])
         @ads = @plant.ads
         @reviews = @plant.reviews
+        @tips = @plant.tips
         render :show
     end
 
