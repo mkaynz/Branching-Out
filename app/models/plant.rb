@@ -15,10 +15,7 @@ class Plant < ApplicationRecord
     validates :price, presence: true
     validates :stock, presence: true
 
-    belongs_to :user
-    has_one_attached :image
-
-    has_many_attached :image
+  
 
     has_many(
         :ads,
