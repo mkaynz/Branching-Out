@@ -67,3 +67,5 @@ gem "bootstrap_form", "~> 4.0"
 
 # Authentication
 gem 'devise'
+
+gem 'simplecov', require: false, group: :test

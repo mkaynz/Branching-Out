@@ -28,4 +28,11 @@ class User < ApplicationRecord
           foreign_key: 'user_id',
           inverse_of: :creator
       )
+  
+    has_many(
+    :posts,
+    class_name: 'Post',
+    foreign_key: 'user_id',
+    inverse_of: :creator
+  )
 end
