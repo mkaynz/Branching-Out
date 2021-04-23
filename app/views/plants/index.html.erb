@@ -1,27 +1,24 @@
 <h1>List O' Flowers</h1>
 
-<table class = "table table-striped table-hover">
-
-    <thead class = "thead-dark">
-        <tr>
-            <th> Name </th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <body>
-        <% @plants.each do |plant| %>
-            <tr>
-                <td><%= plant.name %></td>
-                <td><%= link_to 'Show', plant_path(plant) %> </td>
-                <td><%= link_to 'Delete', plant_path(plant), method: :delete %> </td>
-            </tr>
-        <%end%>
-    </body>
-
-</table>
-
 <p>
     <%= link_to "Add Flower", new_plant_path, class: 'btn btn-primary' %>
 </p>
+
+<tbody>
+    <% @plants.each do |plant| %>
+        <div class="card border-dark bg-light mb-3" style="width: 70rem;">
+
+            <div class="card-body">
+            <% if plant.creator == current_user %>
+                <p class="card-text"><%= link_to '✏️', edit_plant_path(plant) %></p>
+            <% end %>
+                <center><h1 class="card-title"><%= link_to plant.name, plant_path(plant) %> </h1></center>
+                <center><p class="card-text">Owner: <%= plant.creator.email %></p></center>
+            <% if plant.creator == current_user %>
+                <left><p class="card-text"><%= link_to '🗑️', plant_path(plant), method: :delete %></p></left>
+            <% end %>
+            </div>
+
+        </div>
+    <% end %>
+</tbody>
