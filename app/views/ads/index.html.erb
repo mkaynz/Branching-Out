@@ -49,6 +49,7 @@ body {
             <p>Price: $<%= ad.plant.price %></p>
             <p>Stock: <%= ad.plant.stock %></p>
             <%= link_to 'View Info', plants_path, class: 'btn btn-secondary'%>
+            <%= link_to 'Buy', ads_path, class: 'btn btn-secondary'%>
         </div>
 
     <% end %>
