@@ -10,6 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2021_04_26_011317) do
+=======
 ActiveRecord::Schema.define(version: 2021_04_22_232514) do
 iss32
 ActiveRecord::Schema.define(version: 2021_04_16_005701) do
@@ -18,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_005701) do
 ActiveRecord::Schema.define(version: 2021_04_19_050151) do
 
 main
+>>>>>>> 633f527432cf90c8ae5b7ce3854fc58922d2124b
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +61,9 @@ main
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "plant_id"
+    t.bigint "user_id"
     t.index ["plant_id"], name: "index_ads_on_plant_id"
+    t.index ["user_id"], name: "index_ads_on_user_id"
   end
 
 
@@ -153,7 +159,9 @@ main
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "plant_id"
+    t.bigint "user_id"
     t.index ["plant_id"], name: "index_reviews_on_plant_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "tips", force: :cascade do |t|
@@ -179,9 +187,11 @@ main
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "ads", "plants"
+  add_foreign_key "ads", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "plants", "users"
   add_foreign_key "reviews", "plants"
+  add_foreign_key "reviews", "users"
   add_foreign_key "tips", "plants"
 iss32
   add_foreign_key "posts", "users"

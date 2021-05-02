@@ -17,12 +17,14 @@ class PlantsController < ApplicationController
     end
 
     def new
-        @plant = Plant.new
+        @user = current_user
+        @plant = @user.plants.new
         render :new
     end
 
     def create
-        @plant = Plant.new(params.require(:plant).permit(:name, :breed, :description, :price, :stock))
+        @user = current_user
+        @plant = @user.plants.new(params.require(:plant).permit(:name, :breed, :description, :price, :stock))
         if @plant.save
             flash[:success] = "New Plant added!"
             redirect_to plants_url
