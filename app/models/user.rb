@@ -22,7 +22,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-<<<<<<< HEAD
   has_many(
     :plants,
     class_name: 'Plant',
@@ -40,7 +39,6 @@ class User < ApplicationRecord
   has_many(
     :reviews,
     class_name: 'Review',
-=======
          has_many(
           :plants,
           class_name: 'Plant',
@@ -51,7 +49,6 @@ class User < ApplicationRecord
     has_many(
     :posts,
     class_name: 'Post',
->>>>>>> 633f527432cf90c8ae5b7ce3854fc58922d2124b
     foreign_key: 'user_id',
     inverse_of: :creator
   )
