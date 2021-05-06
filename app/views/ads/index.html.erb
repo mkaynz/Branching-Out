@@ -1,5 +1,18 @@
 <h1>Ads</h1>
 
+<details>
+  <summary> Shopping Cart</summary>
+  <%if @cart.empty?%>
+    <p> No items in cart.</p>
+  <%else%>
+    <ul>
+      <% @cart.each do |ad| %>
+        <li><%=ad.plant.name%>-<%= link_to 'remove from cart', remove_from_cart_path(ad), method: :delete%></li>
+      <%end%>
+    </ul>
+  <%end%>
+</details>
+
 <head>
 <style>
 body {
@@ -46,8 +59,14 @@ body {
             <h4><%= ad.title %></h4>
             <p>Pic Here...</p>
             <p>Name: <%= ad.plant.name %></p>
-            <p>Price: $<%= ad.price %></p>
-            <p>Stock: <%= ad.stock %></p>
+            <p>Price: $<%= ad.plant.price %></p>
+            <p>Stock: <%= ad.plant.stock %></p>
+            <% if @cart.include?(ad)%>
+              <p><%= button_to 'remove from cart', remove_from_cart_path(ad), method: :delete%></p>
+
+            <%else%>
+              <p><%= link_to 'add to cart', add_to_cart_path(ad.plant.id), method: :post %></p>
+            <%end%>
         </div>
 
     <% end %>
