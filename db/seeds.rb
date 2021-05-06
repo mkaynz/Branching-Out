@@ -44,14 +44,16 @@ plant1 = Plant.create!(
 # Plant 1 Ad
 Ad.create!(
     title: 'Cool Flowers Ready for Winter!?',
-    plant: plant1
+    plant: plant1,
+    creator: user1
 )
 
 # Plant 1 Review
 Review.create!(
     body: 'Not the best looking flower but whatever...',
     rating: 5,
-    plant: plant1
+    plant: plant1,
+    creator: user3
 )
 
 Tip.create!(
@@ -72,13 +74,14 @@ plant2 = Plant.create!(
 # Plant 2 Ad
 Ad.create!(
     title: 'Buy These Flowers!!',
-    plant: plant2
+    plant: plant2,
+    creator: user2
 )
 
 # Plant 3
 plant3 = Plant.create!(
     name: 'Hibiscus',
-    breed: '',
+    breed: 'Tiger Lily',
     description: 'Hibiscus is a genus of flowering plants in the mallow family, Malvaceae. The genus is quite large, comprising several hundred species that are native to warm temperate, subtropical and tropical regions throughout the world.',
     price: 15.99,
     stock: 3,
@@ -88,12 +91,14 @@ plant3 = Plant.create!(
 # Plant 3 Ad
 Ad.create!(
     title: 'Flowers Brighter than the Sun!',
-    plant: plant3
+    plant: plant3,
+    creator: user2
 )
 
 Ad.create!(
     title: 'Just Buy This!',
-    plant: plant3
+    plant: plant3,
+    creator: user2
 )
 
 plant4 = Plant.create!(
@@ -135,7 +140,8 @@ Tip.create!(
 
 Ad.create!(
     title: 'Bat but It\'s a Plant',
-    plant: plant6
+    plant: plant6,
+    creator: user5
 )
 
 plant7 = Plant.create!(

@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     
     def new
         @plant = Plant.find(params[:plant_id])
-        @review = Review.new
+        @review = @plant.reviews.new
         render :new
     end
 
@@ -31,6 +31,7 @@ class ReviewsController < ApplicationController
 
     def update
         @plant = Plant.find(params[:plant_id])
+        @user = current_user
         @review = @plant.reviews.find(params[:id])
         if @review.update(params.require(:review).permit(:body, :rating))
             flash[:success] = 'Review Updated!'
