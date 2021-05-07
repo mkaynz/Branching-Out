@@ -201,8 +201,6 @@ ActiveRecord::Schema.define(version: 2021_05_05_105258) do
   add_foreign_key "ads", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "line_items", "orders"
-  add_foreign_key "posts", "users"
-  add_foreign_key "reviews", "plants"
   add_foreign_key "plants", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "reviews", "plants"
