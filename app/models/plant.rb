@@ -10,12 +10,22 @@
 #  stock       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :bigint
+#
+# Indexes
+#
+#  index_plants_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
 #
 class Plant < ApplicationRecord
     validates :price, presence: true
     validates :stock, presence: true
 
-    has_many_attached :image
+    
+    has_one_attached :image
 
     has_many(
         :ads,
@@ -31,5 +41,20 @@ class Plant < ApplicationRecord
         foreign_key: 'plant_id',
         inverse_of: :plant,
         dependent: :destroy
+    )
+
+    has_many(
+        :tips,
+        class_name: 'Tip',
+        foreign_key: 'plant_id',
+        inverse_of: :plant,
+        dependent: :destroy
+    )
+
+    belongs_to(
+        :creator,
+        class_name: 'User',
+        foreign_key: 'user_id',
+        inverse_of: :plants
     )
 end

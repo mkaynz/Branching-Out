@@ -7,14 +7,15 @@ class ReviewsController < ApplicationController
     
     def new
         @plant = Plant.find(params[:plant_id])
-        @review = Review.new
+        @review = @plant.reviews.new
         render :new
     end
 
     def create
         @plant = Plant.find(params[:plant_id])
         @review = @plant.reviews.build(params.require(:review).permit(:body, :rating))
-        if @review.save
+        @review.creator = current_user
+        if @review.save!
             flash[:success] = "New Review added!"
             redirect_to plant_reviews_url(@plant)
         else
@@ -30,6 +31,7 @@ class ReviewsController < ApplicationController
     end
 
     def update
+        @user = current_user
         @plant = Plant.find(params[:plant_id])
         @review = @plant.reviews.find(params[:id])
         if @review.update(params.require(:review).permit(:body, :rating))

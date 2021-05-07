@@ -1,0 +1,19 @@
+<h1>Choose a Plant for Your Ad</h1>
+
+<tbody>
+    <% @plants.each do |plant| %>
+        <% if current_user == plant.creator %>
+            <div class="card border-dark bg-light mb-3" style="width: 70rem;">
+
+                <div class="card-body">
+                    <p class="card-text"><%= link_to '✏️', edit_plant_path(plant) %></p>
+                    <center><h1 class="card-title"><%= link_to plant.name, new_ad_path(plant) %> </h1></center>
+                    <center><p class="card-text">Owner: <%= plant.creator.email %></p></center>
+                    <left><p class="card-text"><%= link_to '🗑️', plant_path(plant), method: :delete %></p></left>
+                </div>
+
+            </div>
+        <% end %>
+    <% end %>
+</tbody>
+
