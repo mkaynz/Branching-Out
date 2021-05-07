@@ -6,6 +6,7 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.string :description
       t.float :price
       t.integer :stock
+    
       
       t.timestamps
     end

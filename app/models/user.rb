@@ -28,20 +28,6 @@ class User < ApplicationRecord
     foreign_key: 'user_id',
     inverse_of: :creator
   )
-
-  has_many(
-    :ads,
-    class_name: 'Ad',
-    foreign_key: 'user_id',
-    inverse_of: :creator
-  )
-
-  has_many(
-    :reviews,
-    class_name: 'Review',
-    foreign_key: 'user_id',
-    inverse_of: :creator
-  )
   
   has_many(
     :posts,

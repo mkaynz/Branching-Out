@@ -7,14 +7,16 @@
     <hr>
 
     <% if @plant.creator == current_user %>
-        <%= link_to 'Edit', edit_plant_path, class: 'btn btn-secondary' %> 
+        <%= link_to 'Edit', edit_plant_path, class: 'btn btn-dark btn-dark' %> 
     <% end %>
 
     <% if @plant.creator == current_user %>
-      <%= link_to 'Create New Ad', choose_path(@plant), class: 'btn btn-primary' %>
+      <%= link_to 'Create New Ad', choose_path(@plant), class: 'btn btn-dark btn-dark' %>
     <% end %>
     
 </h4>
+
+
 
 <p>Price: $<%= @plant.price %></p>
 <p>Stock: <%= @plant.stock %></p>
@@ -71,6 +73,10 @@ body {font-family: Arial;}
 </style>
 </head>
 <body>
+
+<%= image_tag(@plant.image,class: 'col mb-2',
+    size: "270x260",
+    style: "object-fit: cover;") if @plant.image.attached? %>
 
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Description</button>
@@ -146,4 +152,4 @@ document.getElementById("defaultOpen").click();
 
 </table> -->
 
-<%= link_to "Back", plants_path, class: 'btn btn-secondary'%>
+<%= link_to "Back", plants_path, class: 'btn btn-dark btn-dark'%>
