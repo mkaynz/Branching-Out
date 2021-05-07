@@ -163,9 +163,6 @@ ActiveRecord::Schema.define(version: 2021_04_26_011317) do
   add_foreign_key "plants", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "reviews", "plants"
-<<<<<<< HEAD
-=======
   add_foreign_key "reviews", "users"
->>>>>>> main
   add_foreign_key "tips", "plants"
 end
