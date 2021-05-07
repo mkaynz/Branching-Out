@@ -9,6 +9,10 @@
     <% if @plant.creator == current_user %>
         <%= link_to 'Edit', edit_plant_path, class: 'btn btn-secondary' %> 
     <% end %>
+
+    <% if @plant.creator == current_user %>
+      <%= link_to 'Create New Ad', choose_path(@plant), class: 'btn btn-primary' %>
+    <% end %>
 </h4>
 
 <p>Price: $<%= @plant.price %></p>
@@ -94,7 +98,7 @@ body {font-family: Arial;}
 <p><%= link_to 'Write a Review ➕', new_plant_review_path(@plant) %></p>
   <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
     <% @reviews.each do |review| %>
-        <h5>@Reviewee's Name<h5>
+        <h5><%= review.creator.email %><h5>
         <p><%= review.body %></p>
         <p>Rating: <%= review.rating %></p>
         <hr>
