@@ -24,8 +24,8 @@ class Plant < ApplicationRecord
     validates :price, presence: true
     validates :stock, presence: true
 
+    
     has_one_attached :image
-
 
     has_many(
         :ads,

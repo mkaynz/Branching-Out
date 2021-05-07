@@ -27,7 +27,7 @@ class PlantsController < ApplicationController
         @plant = Plant.new(params.require(:plant).permit(:name, :breed, :description, :price, :stock, :image))
 
         @user = current_user
-        @plant = @user.plants.new(params.require(:plant).permit(:name, :breed, :description, :price, :stock))
+        @plant = @user.plants.new(params.require(:plant).permit(:name, :breed, :description, :price, :stock, :image))
 
         if @plant.save
             flash[:success] = "New Plant added!"
