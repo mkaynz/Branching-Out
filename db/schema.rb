@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_04_26_011317) do
-=======
-ActiveRecord::Schema.define(version: 2021_04_22_232514) do
-iss32
-ActiveRecord::Schema.define(version: 2021_04_16_005701) do
-
-
-ActiveRecord::Schema.define(version: 2021_04_19_050151) do
-
-main
->>>>>>> 633f527432cf90c8ae5b7ce3854fc58922d2124b
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,7 +43,6 @@ main
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-
   create_table "ads", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
@@ -66,7 +53,6 @@ main
     t.index ["user_id"], name: "index_ads_on_user_id"
   end
 
-
   create_table "checkouts", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -74,21 +60,6 @@ main
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
-  create_table "line_items", force: :cascade do |t|
-    t.integer "quantity"
-    t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "order_id"
-    t.index ["order_id"], name: "index_line_items_on_order_id"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.string "status"
-    t.integer "total"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
 
   create_table "comments", force: :cascade do |t|
     t.string "body"
@@ -105,6 +76,15 @@ main
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "line_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "order_id"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.bigint "conversation_id"
@@ -113,7 +93,13 @@ main
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "status"
+    t.integer "total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "plants", force: :cascade do |t|
@@ -127,22 +113,6 @@ main
     t.bigint "user_id"
     t.index ["user_id"], name: "index_plants_on_user_id"
   end
-
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  add_foreign_key "ads", "plants"
-  add_foreign_key "line_items", "orders"
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -189,14 +159,10 @@ main
   add_foreign_key "ads", "plants"
   add_foreign_key "ads", "users"
   add_foreign_key "comments", "posts"
+  add_foreign_key "line_items", "orders"
   add_foreign_key "plants", "users"
+  add_foreign_key "posts", "users"
   add_foreign_key "reviews", "plants"
   add_foreign_key "reviews", "users"
   add_foreign_key "tips", "plants"
-iss32
-  add_foreign_key "posts", "users"
-
-  add_foreign_key "reviews", "plants"
-
-main
 end

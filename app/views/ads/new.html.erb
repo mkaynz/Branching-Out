@@ -8,13 +8,11 @@ body {
 
 <h1>Create New Ad</h1>
 
-<%= bootstrap_form_with model: @ad, url: ads_path, method: :post, local: true do |x| %>
+<%= bootstrap_form_with model: @ad, url: choose_path, method: :post, local: true do |x| %>
 
     <%= x.text_field :title %>
-    <%= x.number_field :price %>
-    <%= x.number_field :stock %>
     <%= x.submit %>
 
 <% end %>
 
-<%= link_to 'Cancel', ads_path, class: 'btn btn-primary' %>
+<%= link_to 'Cancel', plants_path, class: 'btn btn-primary' %>
