@@ -2,12 +2,18 @@
 
 
 <h4>
-    <%= @plant.name %>
+    <%= @plant.name %> <br>
+    <%= @plant.breed %>
     <hr>
 
     <% if @plant.creator == current_user %>
         <%= link_to 'Edit', edit_plant_path, class: 'btn btn-secondary' %> 
     <% end %>
+
+    <% if @plant.creator == current_user %>
+      <%= link_to 'Create New Ad', choose_path(@plant), class: 'btn btn-primary' %>
+    <% end %>
+    
 </h4>
 
 
@@ -15,78 +21,6 @@
 <p>Price: $<%= @plant.price %></p>
 <p>Stock: <%= @plant.stock %></p>
 
-
-
-<head>
-<style>
-.dropbtn {
-  background-color: #82caff;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 16px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-</style>
-</head>
-<body>
-
-<div class="btn-group">
-    <div class="dropdown">
-        <button class="dropbtn">Description</button>
-        <div class="dropdown-content">
-            <p><%= @plant.description %></p>
-        </div>    
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">Tips</button>
-        <div class="dropdown-content">
-            <% @tips.each do |tip| %>
-                <% if tip.body == '' || tip.body == nil %>
-                    <p>No Tips Given/Figure it Out Yourself</p>   
-                <% end %> 
-                <p><%= tip.body %></p>
-            <% end %>
-        </div>   
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">Reviews</button>
-        <div class="dropdown-content">
-            <% @reviews.each do |review| %>
-                <p><%= review.body %></p>
-                <p>Rating: <%= review.rating %></p>
-            <% end %>
-        </div>    
-    </div>
-</div>
 
 <style>
 body {font-family: Arial;}
@@ -167,7 +101,7 @@ body {font-family: Arial;}
 <p><%= link_to 'Write a Review ➕', new_plant_review_path(@plant) %></p>
   <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
     <% @reviews.each do |review| %>
-        <h5>Reviewee's Name</h5>
+        <h5><%= review.creator.email %><h5>
         <p><%= review.body %></p>
         <p>Rating: <%= review.rating %></p>
         <hr>
@@ -193,7 +127,7 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 </script>
 
-<table class = "table table-striped table-hover">
+<!-- <table class = "table table-striped table-hover">
 
     <thead class = "thead-dark">
         <tr>
@@ -212,6 +146,6 @@ document.getElementById("defaultOpen").click();
         <%end%>
     </body>
 
-</table>
+</table> -->
 
 <%= link_to "Back", plants_path, class: 'btn btn-secondary'%>
