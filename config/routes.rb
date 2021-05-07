@@ -30,6 +30,11 @@ Rails.application.routes.draw do
 
 
   get 'ads', to: 'ads#index', as: 'ads'
+  #routes for the add to cart and remove from cart button on each plant below
+  post 'ads/add_to_cart/:id', to: 'ads#add_to_cart', as: 'add_to_cart'
+  delete 'ads/remove_from_cart/:id', to: 'ads#remove_from_cart', as: 'remove_from_cart'
+  post 'ads', to: 'ads#create'
+  get 'ads/new', to: 'ads#new', as: 'new_ad'
 
   get 'checkout', to: 'checkouts#index', as: 'checkout' #route for the checkout enopara
   

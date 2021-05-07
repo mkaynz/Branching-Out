@@ -69,3 +69,13 @@ gem "bootstrap_form", "~> 4.0"
 gem 'devise'
 
 gem 'simplecov', require: false, group: :test
+
+gem 'pay', '~> 2.0'
+
+gem 'stripe', '< 6.0', '>=2.8'
+
+gem 'braintree', '< 3.0', '>= 2.92.0'
+
+gem 'paddle_pay', '~> 0.1'
+
+gem 'receipts', '~> 1.0.0'
