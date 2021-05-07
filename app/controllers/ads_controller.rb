@@ -19,6 +19,7 @@ class AdsController < ApplicationController
     def create
         @plant = Plant.find(params[:plant_id])
         @ad = @plant.ads.new(params.require(:ad).permit(:title))
+        @ad.creator = current_user
         if @ad.save!
             flash[:success] = "New Ad added!"
             redirect_to ads_url

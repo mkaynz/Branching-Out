@@ -24,13 +24,12 @@ Rails.application.routes.draw do
   put 'plants/:plant_id/reviews.:id', to: 'reviews#update'
   get 'plants/:plant_id/reviews/:id/edit', to: 'reviews#edit', as: 'edit_plant_review'
 
-  get 'ads', to: 'ads#index', as: 'ads'
+  get 'plants/:plant_id/ads', to: 'ads#show', as: 'choose'
+  post 'plants/:plant_id/ads', to: 'ads#create'
+  get 'plants/:plant_id/ads/new', to: 'ads#new', as: 'new_ad'
 
-  get 'ads/:plant_id', to: 'ads#show', as: 'choose' # user chooses which plant to make the ad for
-  post 'ads/:plant_id/plant', to: 'ads#create'
-  get 'ads/:plant_id/plant/new', to: 'ads#new', as: 'new_ad'
-  # post 'ads', to: 'ads#create'
-  # get 'ads/new', to: 'ads#new', as: 'new_ad'
+
+  get 'ads', to: 'ads#index', as: 'ads'
 
   get 'checkout', to: 'checkouts#index', as: 'checkout' #route for the checkout enopara
   
