@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2021_04_26_011317) do
 
   # These are extensions that must be enabled in order to support this database
@@ -161,17 +160,9 @@ ActiveRecord::Schema.define(version: 2021_04_26_011317) do
   add_foreign_key "ads", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "line_items", "orders"
-<<<<<<< HEAD
-  add_foreign_key "posts", "users"
-  add_foreign_key "reviews", "plants"
-=======
   add_foreign_key "plants", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "reviews", "plants"
-<<<<<<< HEAD
-=======
   add_foreign_key "reviews", "users"
->>>>>>> main
   add_foreign_key "tips", "plants"
->>>>>>> 40e8d591397be31fbb5032fa91a07936740d5a42
 end
