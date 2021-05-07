@@ -20,9 +20,7 @@ body {
 }
 </style>
 </head>
-<p>
-    <%= link_to 'Create New Ad', new_ad_path, class: 'btn btn-primary' %>
-</p>
+
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,6 +65,8 @@ body {
             <%else%>
               <p><%= link_to 'add to cart', add_to_cart_path(ad.plant.id), method: :post %></p>
             <%end%>
+            <%= link_to 'View Flowers', plants_path, class: 'btn btn-dark btn-dark'%>
+            <%= link_to 'Buy', ads_path, class: 'btn btn-dark btn-dark'%>
         </div>
 
     <% end %>

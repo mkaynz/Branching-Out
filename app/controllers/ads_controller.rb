@@ -4,17 +4,26 @@ class AdsController < ApplicationController
     before_action :load_cart
     def index
         @ads = Ad.all
+        @plant = Plant.all
         render :index
     end
 
+    def show
+        @plants = Plant.all
+        render :choose
+    end
+
     def new
-        @ad = Ad.new
+        @plant = Plant.find(params[:plant_id])
+        @ad = @plant.ads.new
         render :new
     end
 
     def create
-        @ad = Ad.new(params.require(:ad).permit(:title))
-        if @ad.save
+        @plant = Plant.find(params[:plant_id])
+        @ad = @plant.ads.new(params.require(:ad).permit(:title))
+        @ad.creator = current_user
+        if @ad.save!
             flash[:success] = "New Ad added!"
             redirect_to ads_url
         else
